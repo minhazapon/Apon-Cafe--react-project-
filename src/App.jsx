@@ -8,13 +8,18 @@ import Header from './Header'
 
 
 
-
 function App() {
   
 
     const [bookmarks, setBookmarks] = useState([])
 
+    const handleBookmark = Blogs => {
 
+      const newBookmarks = [...bookmarks, Blogs]
+
+      setBookmarks(newBookmarks);
+
+   }
     
 
   return (
@@ -23,9 +28,9 @@ function App() {
       <Header></Header>
      
      <div className=' md:flex  flex justify-center  gap-20'>
-     <Blogs></Blogs>
+     <Blogs handleBookmark={handleBookmark} ></Blogs>
 
-      <Bookmarks></Bookmarks>
+      <Bookmarks bookmarks={bookmarks} ></Bookmarks>
 
 
      </div>

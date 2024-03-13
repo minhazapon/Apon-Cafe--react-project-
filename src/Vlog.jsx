@@ -3,7 +3,7 @@ import { IoBookmarksOutline } from "react-icons/io5";
 
 
 
-const Vlog = ({blogs}) => {
+const Vlog = ({blogs, handleBookmark}) => {
 
    const {cover, author_img, reading_time, author, title, posted_date} = blogs;
 
@@ -26,7 +26,7 @@ const Vlog = ({blogs}) => {
 
                     <span className=" text-xl font-bold text-slate-500"> {reading_time} min time </span>
 
-                    <button><IoBookmarksOutline></IoBookmarksOutline></button>
+                    <button  onClick={ () =>  handleBookmark(blogs)}><IoBookmarksOutline></IoBookmarksOutline></button>
 
 
 

@@ -3,7 +3,7 @@ import { useState } from "react";
 import Vlog from "./Vlog";
 
 
-const Blogs = () => {
+const Blogs = ({handleBookmark}) => {
 
     const [blogs, setBlogs] = useState([])
 
@@ -23,7 +23,10 @@ const Blogs = () => {
              <h1 className=" text-4xl">blogs: </h1>
            
             {
-               blogs.map(blogs => <Vlog key={blogs.id} blogs={blogs}></Vlog> )
+               blogs.map(blogs => <Vlog key={blogs.id} blogs={blogs}
+                handleBookmark={handleBookmark}
+               
+               ></Vlog> )
 
             }
              
